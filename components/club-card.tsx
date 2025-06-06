@@ -1,6 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, Users, Crown, User, Clock } from "lucide-react"
+import { Calendar, Users, Crown, User, Clock ,Info} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -22,46 +22,62 @@ export default function ClubCard({ club }: { club: Club }) {
     <Card className="group overflow-hidden hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 transform hover:-translate-y-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg">
       {/* Header */}
       <Link href={`/club/${club.id}`}>
-  <CardHeader
-    className="relative p-6 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105"
-    style={{
-      backgroundImage: "url('/backgrounds/app-bg.jpg')",
-      backgroundColor: "#0a3d62",
-    }}
+<CardHeader
+  className="relative p-6 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105"
+  style={{
+    backgroundImage: "url('/backgrounds/app-bg.jpg')",
+    backgroundColor: "#0a3d62",
+  }}
+>
+  {/* Info Icon at Top Right */}
+ <Link
+    href={`/club/${club.id}/manage`}
+    className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
+    title="Manage Club"
   >
-    <div className="flex items-center space-x-4">
-      <div className="relative">
-        <div className="h-14 w-14 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/50 dark:ring-gray-700/50">
-          <Image
-            src={club.logo || "/placeholder.svg"}
-            alt={`${club.name} logo`}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute -bottom-1 -right-1 p-1 bg-white dark:bg-gray-800 rounded-full shadow-md">
-          {club.userRole === "creator" ? (
-            <Crown className="h-4 w-4 text-yellow-500" title="Club Creator" />
-          ) : (
-            <User className="h-4 w-4 text-blue-500" title="Member" />
-          )}
-        </div>
+    <Info className="h-5 w-5" />
+  </Link>
+
+  <div className="flex items-center space-x-4">
+    <div className="relative">
+      <div className="h-14 w-14 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/50 dark:ring-gray-700/50">
+        <Image
+          src={club.logo || "/placeholder.svg"}
+          alt={`${club.name} logo`}
+          fill
+          className="object-cover"
+        />
       </div>
-      <div className="flex-1 min-w-0">
-        <h3 className="font-bold text-lg text-[#38ada9] truncate group-hover:text-[#38ada9] transition-colors" style={{
-    textShadow: '0 0 8px #38ADA9',
-  }}>
-          {club.name}
-        </h3>
-        <Badge
-          variant="outline"
-          className="mt-2 bg-white/60 dark:bg-gray-700/60 backdrop-blur-sm border-gray-200 dark:border-gray-600"
-        >
-          <span className="font-mono text-xs">#{club.code}</span>
-        </Badge>
+      <div className="absolute -bottom-1 -right-1 p-1 bg-white dark:bg-gray-800 rounded-full shadow-md">
+        {club.userRole === "creator" ? (
+          <Crown className="h-4 w-4 text-yellow-500" title="Club Creator" />
+        ) : (
+          <User className="h-4 w-4 text-blue-500" title="Member" />
+        )}
       </div>
     </div>
-  </CardHeader>
+    <div className="flex-1 min-w-0">
+      <h3
+        className="font-bold text-lg text-[#38ada9] truncate group-hover:text-[#38ada9] transition-colors"
+        style={{ textShadow: '0 0 8px #38ADA9' }}
+      >
+        {club.name}
+      </h3>
+    <div className="mt-2 flex items-center gap-2 flex-wrap">
+     <Badge
+      variant="outline"
+      className="bg-white/60 dark:bg-gray-700/60 backdrop-blur-sm border-gray-200 dark:border-gray-600"
+     >
+     <span className="font-mono text-xs">#{club.code}</span>
+    </Badge>
+    <span className="text-xs text-white/80 dark:text-gray-300 font-medium sm:hidden">
+     {club.members} member{club.members !== 1 && "s"}
+    </span>
+      </div>
+    </div>
+  </div>
+</CardHeader>
+
 </Link>
 
 
