@@ -41,12 +41,9 @@ export default function ClubCard({ club }: { club: Club }) {
   <div className="flex items-center space-x-4">
     <div className="relative">
       <div className="h-14 w-14 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/50 dark:ring-gray-700/50">
-        {/* <Image
-          src={club.logo || "/Clubs.png"}
-          alt={`${club.name} logo`}
-          fill
-          className="object-cover"
-        /> */}
+       <div className="h-14 w-14 rounded-full bg-[#b0c4de] dark:bg-gray-800/50 text-black shadow-lg ring-2 ring-white/50 dark:ring-gray-700/50 flex items-center justify-center text-xl font-bold uppercase">
+  {club.name?.charAt(0) || "C"}
+</div>
       </div>
       <div className="absolute -bottom-1 -right-1 p-1 bg-white dark:bg-gray-800 rounded-full shadow-md">
         {club.userRole === "creator" ? (
