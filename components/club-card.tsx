@@ -41,12 +41,12 @@ export default function ClubCard({ club }: { club: Club }) {
   <div className="flex items-center space-x-4">
     <div className="relative">
       <div className="h-14 w-14 rounded-full overflow-hidden bg-white shadow-lg ring-2 ring-white/50 dark:ring-gray-700/50">
-        <Image
-          src={club.logo || "/placeholder.svg"}
+        {/* <Image
+          src={club.logo || "/Clubs.png"}
           alt={`${club.name} logo`}
           fill
           className="object-cover"
-        />
+        /> */}
       </div>
       <div className="absolute -bottom-1 -right-1 p-1 bg-white dark:bg-gray-800 rounded-full shadow-md">
         {club.userRole === "creator" ? (
