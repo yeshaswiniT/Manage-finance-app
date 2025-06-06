@@ -48,7 +48,9 @@ export default function ClubCard({ club }: { club: Club }) {
         </div>
       </div>
       <div className="flex-1 min-w-0">
-        <h3 className="font-bold text-lg text-[#38ada9] truncate group-hover:text-[#38ada9] transition-colors">
+        <h3 className="font-bold text-lg text-[#38ada9] truncate group-hover:text-[#38ada9] transition-colors" style={{
+    textShadow: '0 0 8px #38ADA9',
+  }}>
           {club.name}
         </h3>
         <Badge

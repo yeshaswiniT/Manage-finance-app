@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import BottomNavigation from "@/components/bottom-navigation"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { Card } from "@/components/ui/card";
 
 // Optional: Skeleton UI component
 function SkeletonClubGrid() {
@@ -110,14 +111,14 @@ export default function Home() {
 
         <h1 className="text-2xl font-bold text-white dark:text-white mb-6">Welcome Jack</h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm">
+       <div className="flex flex-row gap-4 w-full max-w-sm flex-wrap">
           <Button
 className="flex-1 bg-[#38ADA9] hover:bg-[#2e938f] text-white shadow-md shadow-[#38ADA9]/30 hover:shadow-lg hover:shadow-[#2e938f]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0 h-12"
 asChild
           >
             <Link href="/create-club">
               <Plus className="h-5 w-5 mr-2" />
-              <span className="font-semibold">Create Club</span>
+              <span className="font-semibold" >Create Club</span>
             </Link>
           </Button>
 
@@ -136,8 +137,22 @@ asChild
 
       {/* Main Club Grid Section */}
       <div className="container mx-auto px-4 pt-6 pb-8">
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-xl border border-gray-100 dark:border-gray-800 backdrop-blur-sm">
-          <h2 className="text-2xl font-bold mb-8 text-gray-800 dark:text-white text-center">My Clubs</h2>
+        <Card className="bg-white/80 dark:bg-gray-800/80 rounded- p-6 shadow-xl border border-gray-100 dark:border-gray-800 backdrop-blur-sm">
+          
+<div className="flex justify-center mb-4">
+  <div className="flex items-center space-x-2">
+    {/* Icon - e.g., a playing card or poker chip */}
+    <img src="/Clubs.png" alt="Clubs Icon" className="h-8 w-8" />
+
+    {/* Text Icon with Styled Colors */}
+    <span className="text-3xl font-bold">
+      <span className="text-gray-800">my.</span>
+      <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-transparent bg-clip-text">
+        clubs
+      </span>
+    </span>
+  </div>
+</div>
 
           {isLoading ? (
             <SkeletonClubGrid />
@@ -171,7 +186,7 @@ asChild
               </p>
             </div>
           )}
-        </div>
+        </Card>
         <BottomNavigation />
       </div>
     </main>

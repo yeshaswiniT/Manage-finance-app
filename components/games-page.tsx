@@ -205,7 +205,7 @@ export default function GamesPage() {
             )}
           >
             <CardContent className="p-6">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 -ml-5 sm:ml-0">
                 <div
                   className={cn(
                     "p-3 rounded-xl shadow-lg",
@@ -221,7 +221,7 @@ export default function GamesPage() {
                   )}
                 </div>
                 <div>
-                  <p className={cn("text-3xl font-bold", stats.totalProfit >= 0 ? "text-green-600" : "text-red-600")}>
+                  <p className={cn("text-3xl font-bold pt-1 sm:pt-0", stats.totalProfit >= 0 ? "text-green-600" : "text-red-600")}>
                     {stats.totalProfit >= 0 ? "+" : ""}${stats.totalProfit}
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">Total Profit</p>

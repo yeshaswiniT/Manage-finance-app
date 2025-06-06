@@ -11,6 +11,7 @@ import {
   TrendingDown,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
@@ -220,18 +221,29 @@ export default function TransactionsPage() {
       </div>
 
       {/* Money I Owe Section */}
-      <div>
-        <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
-          <ArrowDownLeft className="h-5 w-5 mr-2 text-red-500" />
-          Money I Owe ({moneyIOwe.filter((item) => item.status !== "paid").length} outstanding)
-        </h2>
-        <div className="space-y-4">
-          {moneyIOwe.map((transaction) => (
-            <Card
-              key={transaction.id}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <CardContent className="p-6">
+    <Tabs defaultValue="owe" className="w-full">
+  <TabsList className="grid grid-cols-2 mb-6">
+    <TabsTrigger value="owe"   className="flex items-center justify-center gap-2 data-[state=active]:bg-[#38ADA9] data-[state=active]:text-white rounded-md px-4 py-2 transition-colors">
+      <ArrowDownLeft className="h-5 w-5 text-red-600" />
+      Money I Owe ({moneyIOwe.filter(item => item.status !== 'paid').length})
+    </TabsTrigger>
+    <TabsTrigger value="owed"   className="flex items-center justify-center gap-2 data-[state=active]:bg-[#38ADA9] data-[state=active]:text-white rounded-md px-4 py-2 transition-colors">
+      <ArrowUpRight className="h-5 w-5 text-green-600" />
+      Money Owed to me({moneyOwedToMe.filter(item => item.status !== 'received').length})
+    </TabsTrigger>
+  </TabsList>
+
+  {/* Money I Owe Tab */}
+  <TabsContent value="owe" className="space-y-4">
+    {moneyIOwe.length === 0 ? (
+      <p className="text-center text-gray-500 dark:text-gray-400">No outstanding debts.</p>
+    ) : (
+      moneyIOwe.map(transaction => (
+        <Card
+          key={transaction.id}
+          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+        >
+         <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-4">
                     <div className={`p-3 rounded-xl shadow-lg ${getTransactionBg("debt", transaction.status)}`}>
@@ -275,24 +287,23 @@ export default function TransactionsPage() {
                   </div>
                 )}
               </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
 
-      {/* Money Owed to Me Section */}
-      <div>
-        <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
-          <ArrowUpRight className="h-5 w-5 mr-2 text-green-500" />
-          Money Owed to Me ({moneyOwedToMe.filter((item) => item.status !== "received").length} outstanding)
-        </h2>
-        <div className="space-y-4">
-          {moneyOwedToMe.map((transaction) => (
-            <Card
-              key={transaction.id}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <CardContent className="p-6">
+        </Card>
+      ))
+    )}
+  </TabsContent>
+
+  {/* Money Owed to Me Tab */}
+  <TabsContent value="owed" className="space-y-4">
+    {moneyOwedToMe.length === 0 ? (
+      <p className="text-center text-gray-500 dark:text-gray-400">No expected collections.</p>
+    ) : (
+      moneyOwedToMe.map(transaction => (
+        <Card
+          key={transaction.id}
+          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+        >
+       <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-4">
                     <div className={`p-3 rounded-xl shadow-lg ${getTransactionBg("credit", transaction.status)}`}>
@@ -350,10 +361,13 @@ export default function TransactionsPage() {
                   </div>
                 )}
               </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
+
+        </Card>
+      ))
+    )}
+  </TabsContent>
+</Tabs>
+
     </div>
   )
 }
