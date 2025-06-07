@@ -80,7 +80,7 @@ export default function Home() {
   }}
 >
       {/* Header Section */}
-      <section className="relative flex flex-col items-center justify-start px-6 pt-6 pb-4">
+      <section className="relative flex flex-col items-center justify-start px-6 pt-6 pb-0">
         <button className="absolute top-6 right-6 group">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           <MessageSquare className="h-6 w-6 text-gray-600 dark:text-gray-300 relative z-10 transition-transform group-hover:scale-110" />
