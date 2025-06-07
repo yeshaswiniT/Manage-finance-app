@@ -103,7 +103,7 @@ export default function Home() {
 
        <div className="flex flex-row gap-4 w-full max-w-sm flex-wrap">
           <Button
-className="flex-1 bg-[#38ADA9] hover:bg-[#2e938f] text-white shadow-md shadow-[#38ADA9]/30 hover:shadow-lg hover:shadow-[#2e938f]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0 h-12"
+className="flex-1 bg-[#38ADA9] text-white hover:bg-[#ffff] hover:text-black shadow-md shadow-[#38ADA9]/30 hover:shadow-lg hover:shadow-[#2e938f]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0 h-12"
 asChild
           >
             <Link href="/create-club">
@@ -114,7 +114,7 @@ asChild
 
           <Button
             variant="outline"
-            className="flex-1 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 h-12"
+            className="flex-1 bg-[#A0A0A0] dark:bg-gray-800/50 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 h-12"
             asChild
           >
             <Link href="/join-club">
