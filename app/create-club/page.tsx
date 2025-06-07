@@ -87,7 +87,7 @@ export default function CreateClub() {
             variant="ghost"
             size="icon"
             onClick={() => router.back()}
-            className="mr-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="mr-4 bg-[#38ADA9] rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
@@ -99,29 +99,30 @@ export default function CreateClub() {
 
       <div className="container max-w-md mx-auto px-6 py-8">
         {step === "form" ? (
-          <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl">
+          <Card className="bg-gray-800/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl">Create a New Club</CardTitle>
-              <CardDescription>Enter your club name to get started</CardDescription>
+              <CardTitle className="text-white text-xl">Create a New Club</CardTitle>
+              <CardDescription className="text-white">Enter your club name to get started</CardDescription>
             </CardHeader>
             <form onSubmit={handleSubmit}>
               <CardContent className="space-y-4">
-                <div className="space-y-2">
+                <div className="text-white space-y-2">
                   <Label htmlFor="clubName">Club Name</Label>
                   <Input
                     id="clubName"
                     placeholder="Enter club name"
                     value={clubName}
                     onChange={(e) => setClubName(e.target.value)}
-                    className="bg-white/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700"
+                    className="bg-gray-900/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700"
                     disabled={isSubmitting}
                   />
+                 
                 </div>
               </CardContent>
               <CardFooter>
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
+                  className="w-full bg-[#38ADA9] hover:from-blue-700 hover:to-blue-800 text-gray shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
