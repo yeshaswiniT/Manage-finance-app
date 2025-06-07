@@ -401,7 +401,7 @@ export default function ClubDetails() {
         {!hasAdminRights && (
           <div className="flex gap-4">
             <Button
-              className="flex-1 bg-[#38ADA9] hover:from-green-700 hover:to-emerald-800 text-white shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
+              className="flex-1 bg-[#fafad2] hover:from-green-700 hover:to-emerald-800 text-black shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
               onClick={() => router.push(`/club/${clubId}/host-game`)}
             >
               <Plus className="h-5 w-5 mr-2" />
