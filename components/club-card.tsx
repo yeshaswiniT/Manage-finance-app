@@ -19,16 +19,28 @@ interface Club {
 
 export default function ClubCard({ club }: { club: Club }) {
   return (
+
+
     <Card className="group overflow-hidden hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 transform hover:-translate-y-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg">
       {/* Header */}
       <Link href={`/club/${club.id}`}>
-<CardHeader
+
+      <CardHeader
+  className="relative p-6 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105 backdrop-blur-sm"
+  style={{
+    backgroundImage: "radial-gradient(circle at center,#c6c6c6 0%,#38ADA9 100%)",
+    backgroundColor: "#38ADA9",
+  }}
+>
+  {/* Your header content here */}
+
+{/* <CardHeader
   className="relative px-4 pt-3 pb-2 cursor-pointer transition-all duration-300 hover:brightness-105"
   style={{
     backgroundImage: "url('/backgrounds/app-bg.jpg')",
     backgroundColor: "#0a3d62",
   }}
->
+> */}
   {/* Info Icon at Top Right */}
  <Link
     href={`/club/${club.id}/manage`}
@@ -55,8 +67,8 @@ export default function ClubCard({ club }: { club: Club }) {
     </div>
     <div className="flex-1 min-w-0">
       <h3
-        className="font-bold text-lg text-[#38ada9] truncate group-hover:text-[#38ada9] transition-colors"
-        style={{ textShadow: '0 0 8px #38ADA9' }}
+        className="font-bold text-lg text-gray-800 truncate group-hover:text-[#ffff] transition-colors"
+        
       >
         {club.name}
       </h3>
@@ -67,7 +79,7 @@ export default function ClubCard({ club }: { club: Club }) {
      >
      <span className="font-mono text-xs">#{club.code}</span>
     </Badge>
-    <span className="text-xs text-white/80 dark:text-gray-300 font-medium sm:hidden">
+    <span className="text-xs text-gray-800 dark:text-gray-300 font-medium sm:hidden">
      {club.members} member{club.members !== 1 && "s"}
     </span>
       </div>
