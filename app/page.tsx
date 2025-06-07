@@ -99,7 +99,7 @@ export default function Home() {
           <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
         </div>
 
-        <h1 className="text-2xl font-bold text-white dark:text-white mb-6">Welcome Jack</h1>
+        <h1 className="text-2xl font-bold text-white dark:text-white mb-3">Welcome Jack</h1>
 
        <div className="flex flex-row gap-4 w-full max-w-sm flex-wrap">
           <Button
