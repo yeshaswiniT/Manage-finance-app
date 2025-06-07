@@ -113,7 +113,7 @@ export default function CreateClub() {
                     placeholder="Enter club name"
                     value={clubName}
                     onChange={(e) => setClubName(e.target.value)}
-                    className="bg-gray-900/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700"
+                    className="bg-white/50 dark:bg-gray-900/50 border-gray-200 text-grey dark:border-gray-700"
                     disabled={isSubmitting}
                   />
                  

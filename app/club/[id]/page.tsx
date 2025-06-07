@@ -312,8 +312,12 @@ export default function ClubDetails() {
 
   // Full interface for creators and admins
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16">
-      {/* Top Navigation Bar */}
+    // <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16">
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16" style={{
+      backgroundImage: "url('/cardbackground.jpg')", // ✅ Replace with your actual path
+      backgroundColor: "#0a3d62" // fallback background color
+    }}> 
+    {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
         <div className="px-6 py-4 flex items-center justify-between">
           <div className="flex items-center">
@@ -321,7 +325,7 @@ export default function ClubDetails() {
               variant="ghost"
               size="icon"
               onClick={() => router.back()}
-              className="mr-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="mr-4 bg-[#38ADA9] rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               <ArrowLeft className="h-5 w-5" />
             </Button>
@@ -352,7 +356,14 @@ export default function ClubDetails() {
 
       <div className="container mx-auto px-6 py-6 space-y-8">
         {/* Club Info */}
-        <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl">
+        {/* <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl"> */}
+        <Card
+  className="relative p-4 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105 backdrop-blur-sm"
+  style={{
+    backgroundImage: "radial-gradient(circle at center,#c6c6c6 0%,#38ADA9 100%)",
+    backgroundColor: "#38ADA9",
+  }}
+>
           <CardContent className="p-6">
             <div className="flex justify-between items-start mb-4">
               <div>
@@ -387,10 +398,10 @@ export default function ClubDetails() {
         </Card>
 
         {/* Host Game Button (Only for users with admin rights) */}
-        {hasAdminRights && (
+        {!hasAdminRights && (
           <div className="flex gap-4">
             <Button
-              className="flex-1 bg-gradient-to-r from-green-600 to-emerald-700 hover:from-green-700 hover:to-emerald-800 text-white shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
+              className="flex-1 bg-[#38ADA9] hover:from-green-700 hover:to-emerald-800 text-white shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
               onClick={() => router.push(`/club/${clubId}/host-game`)}
             >
               <Plus className="h-5 w-5 mr-2" />
@@ -400,7 +411,7 @@ export default function ClubDetails() {
         )}
 
         {/* No Admin Rights Message */}
-        {!hasAdminRights && (
+        {hasAdminRights && (
           <Card className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 border-0 shadow-lg">
             <CardContent className="p-4">
               <div className="flex items-center space-x-3">
@@ -422,11 +433,11 @@ export default function ClubDetails() {
 
         {/* Games Tabs */}
         <Tabs defaultValue="active" className="w-full">
-          <TabsList className="grid grid-cols-4 mb-6">
+          <TabsList className="grid grid-cols-3 mb-6">
             <TabsTrigger value="active">Active Games ({activeGames.length})</TabsTrigger>
             <TabsTrigger value="upcoming">Upcoming ({upcomingGames.length})</TabsTrigger>
             <TabsTrigger value="completed">History ({completedGames.length})</TabsTrigger>
-            <TabsTrigger value="members">Members ({members.length})</TabsTrigger>
+            {/* <TabsTrigger value="members">Members ({members.length})</TabsTrigger> */}
           </TabsList>
 
           {/* Active Games Tab */}
