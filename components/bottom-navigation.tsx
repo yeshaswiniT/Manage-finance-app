@@ -45,7 +45,7 @@ export default function BottomNavigation({ defaultActive = "clubs" }: BottomNavi
   return (
     <>
       {/* Bottom nav: visible on mobile/tablet only */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-[#A9A9A9] px-4 py-3 z-50 shadow-lg lg:hidden">
+      <nav className="fixed bottom-0 left-0 right-0 bg-[#A0A0A0] px-4 py-3 z-50 shadow-lg lg:hidden">
         <div className="flex justify-around items-center">
           {navigationItems.map((item) => {
             const Icon = item.icon
@@ -74,7 +74,7 @@ export default function BottomNavigation({ defaultActive = "clubs" }: BottomNavi
       </nav>
 
       {/* Sidebar nav: visible on desktop only */}
-      <aside className="hidden lg:flex flex-col w-20 bg-[#A9A9A9] py-6 px-2 fixed left-0 top-0 bottom-0 z-40">
+      <aside className="hidden lg:flex flex-col w-20 bg-[#A0A0A0] py-6 px-2 fixed left-0 top-0 bottom-0 z-40">
         <div className="flex flex-col gap-6 items-center">
           {navigationItems.map((item) => {
             const Icon = item.icon
