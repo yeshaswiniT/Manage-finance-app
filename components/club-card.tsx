@@ -23,7 +23,7 @@ export default function ClubCard({ club }: { club: Club }) {
       {/* Header */}
       <Link href={`/club/${club.id}`}>
 <CardHeader
-  className="relative p-6 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105"
+  className="relative px-4 pt-3 pb-2 cursor-pointer transition-all duration-300 hover:brightness-105"
   style={{
     backgroundImage: "url('/backgrounds/app-bg.jpg')",
     backgroundColor: "#0a3d62",
