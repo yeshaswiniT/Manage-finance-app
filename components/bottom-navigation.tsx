@@ -43,33 +43,64 @@ export default function BottomNavigation({ defaultActive = "clubs" }: BottomNavi
   const activeTab = getActiveTab()
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-[#38ada9] px-6 py-4 z-50 shadow-lg">
-      <div className="flex justify-around items-center relative">
-        {navigationItems.map((item) => {
-          const Icon = item.icon
-          const isActive = activeTab === item.id
+    <>
+      {/* Bottom nav: visible on mobile/tablet only */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-[#38ada9] px-4 py-3 z-50 shadow-lg lg:hidden">
+        <div className="flex justify-around items-center">
+          {navigationItems.map((item) => {
+            const Icon = item.icon
+            const isActive = activeTab === item.id
 
-          return (
-            <button
-              key={item.id}
-              onClick={() => router.push(item.href)}
-              className={cn(
-                "relative flex flex-col items-center gap-1 transition-all duration-300 ease-out px-3 py-2 rounded-xl",
-                isActive
-                  ? "text-white scale-105 bg-white/10 shadow-md shadow-white/20"
-                  : "text-0a3d62 hover:text-white/80"
-              )}
-            >
-              {/* Dot indicator */}
-              {isActive && (
-                <span className="absolute -top-1 w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              )}
-              <Icon className="w-6 h-6" />
-              <span className="text-xs">{item.label}</span>
-            </button>
-          )
-        })}
-      </div>
-    </nav>
+            return (
+              <button
+                key={item.id}
+                onClick={() => router.push(item.href)}
+                className={cn(
+                  "relative flex flex-col items-center gap-0.5 transition-all duration-300 px-2 py-1.5 rounded-md text-xs",
+                  isActive
+                    ? "text-white bg-white/10 shadow shadow-white/20"
+                    : "text-[#0a3d62] hover:text-white/80"
+                )}
+              >
+                {isActive && (
+                  <span className="absolute -top-1 w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                )}
+                <Icon className="w-5 h-5" />
+                <span>{item.label}</span>
+              </button>
+            )
+          })}
+        </div>
+      </nav>
+
+      {/* Sidebar nav: visible on desktop only */}
+      <aside className="hidden lg:flex flex-col w-20 bg-[#38ada9] py-6 px-2 fixed left-0 top-0 bottom-0 z-40">
+        <div className="flex flex-col gap-6 items-center">
+          {navigationItems.map((item) => {
+            const Icon = item.icon
+            const isActive = activeTab === item.id
+
+            return (
+              <button
+                key={item.id}
+                onClick={() => router.push(item.href)}
+                className={cn(
+                  "relative flex flex-col items-center text-xs gap-1 transition-all px-2 py-2 rounded-md",
+                  isActive
+                    ? "text-white bg-white/10 shadow shadow-white/20"
+                    : "text-[#0a3d62] hover:text-white/80"
+                )}
+              >
+                {isActive && (
+                  <span className="absolute -top-1 w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                )}
+                <Icon className="w-5 h-5" />
+                <span>{item.label}</span>
+              </button>
+            )
+          })}
+        </div>
+      </aside>
+    </>
   )
 }

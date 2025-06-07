@@ -64,17 +64,7 @@ export default function Home() {
           createdAt: "2024-01-20",
           pendingRequests: 1,
         },
-        {
-          id: 4,
-          name: "Poker Kings",
-          code: "PK101",
-          members: 15,
-          nextGame: "Sunday, 6 PM",
-          logo: "/placeholder.svg?height=80&width=80",
-          userRole: "member",
-          joinedAt: "2024-03-05",
-          pendingRequests: 0,
-        },
+      
       ])
       setIsLoading(false)
     }, 1500) // Simulate 1.5s fetch time
@@ -137,7 +127,9 @@ asChild
 
       {/* Main Club Grid Section */}
       <div className="container mx-auto px-4 pt-6 pb-8">
-        <Card className="bg-white/80 dark:bg-gray-800/80 rounded- p-6 shadow-xl border border-gray-100 dark:border-gray-800 backdrop-blur-sm">
+        <Card className="rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md p-6 shadow-xl border border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm m-0">
+
+        {/* <Card className="bg-white/80 dark:bg-gray-800/80 rounded- p-6 shadow-xl border border-gray-100 dark:border-gray-800 backdrop-blur-sm"> */}
           
 <div className="flex justify-center mb-4">
   <div className="flex items-center space-x-2">
