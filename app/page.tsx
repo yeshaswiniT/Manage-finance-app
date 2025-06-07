@@ -126,12 +126,12 @@ asChild
       </section>
 
       {/* Main Club Grid Section */}
-      <div className="container mx-auto px-4 pt-6 pb-8">
-        <Card className="rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md p-6 shadow-xl border border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm m-0">
+      <div className="container mx-auto px-4 pt-5 pb-8">
+        <Card className="rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md p-5 shadow-xl border border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm m-0">
 
         {/* <Card className="bg-white/80 dark:bg-gray-800/80 rounded- p-6 shadow-xl border border-gray-100 dark:border-gray-800 backdrop-blur-sm"> */}
           
-<div className="flex justify-center mb-4">
+<div className="flex justify-center mb-3">
   <div className="flex items-center space-x-2">
     {/* Icon - e.g., a playing card or poker chip */}
     <img src="/Clubs.png" alt="Clubs Icon" className="h-8 w-8" />
