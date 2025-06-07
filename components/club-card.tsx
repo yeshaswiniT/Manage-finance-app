@@ -26,7 +26,7 @@ export default function ClubCard({ club }: { club: Club }) {
       <Link href={`/club/${club.id}`}>
 
       <CardHeader
-  className="relative p-6 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105 backdrop-blur-sm"
+  className="relative p-4 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105 backdrop-blur-sm"
   style={{
     backgroundImage: "radial-gradient(circle at center,#c6c6c6 0%,#38ADA9 100%)",
     backgroundColor: "#38ADA9",
