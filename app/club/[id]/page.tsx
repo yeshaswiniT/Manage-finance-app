@@ -434,9 +434,9 @@ export default function ClubDetails() {
         {/* Games Tabs */}
         <Tabs defaultValue="active" className="w-full">
           <TabsList className="grid grid-cols-3 mb-6">
-            <TabsTrigger value="active"  className="flex items-center justify-center gap-2 data-[state=active]:bg-[#38ADA9] data-[state=active]:text-white rounded-md px-4 py-2 transition-colors">Active Games ({activeGames.length})</TabsTrigger>
-            <TabsTrigger value="upcoming"  className="flex items-center justify-center gap-2 data-[state=active]:bg-[#38ADA9] data-[state=active]:text-white rounded-md px-4 py-2 transition-colors">Upcoming ({upcomingGames.length})</TabsTrigger>
-            <TabsTrigger value="completed"  className="flex items-center justify-center gap-2 data-[state=active]:bg-[#38ADA9] data-[state=active]:text-white rounded-md px-4 py-2 transition-colors">History ({completedGames.length})</TabsTrigger>
+            <TabsTrigger value="active"  className="flex items-center justify-center gap-2 data-[state=active]:text-[#38ADA9]">Active Games ({activeGames.length})</TabsTrigger>
+            <TabsTrigger value="upcoming"  className="flex items-center justify-center gap-2 data-[state=active]:text-[#38ADA9]">Upcoming ({upcomingGames.length})</TabsTrigger>
+            <TabsTrigger value="completed"  className="flex items-center justify-center gap-2 data-[state=active]:text-[#38ADA9]">History ({completedGames.length})</TabsTrigger>
             {/* <TabsTrigger value="members">Members ({members.length})</TabsTrigger> */}
           </TabsList>
 
