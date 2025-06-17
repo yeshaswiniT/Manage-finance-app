@@ -72,12 +72,13 @@ export default function Home() {
 
   return (
   //  <main className="min-h-screen bg-[#0a3d62] dark:bg-[#2E8B87] pt-0 mt-0 pb-16">
-  <main
+    <main
   className="min-h-screen pt-0 mt-0 pb-16 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: "url('/backgrounds/app-bg.jpg')", // ✅ Replace with your actual path
-    backgroundColor: "#0a3d62" // fallback background color
+    backgroundImage: "url('/cardbackground.jpg')", // ✅ Replace with your actual path
+    backgroundColor: "#0a3d62" ,// fallback background color
   }}
+
 >
       {/* Header Section */}
       <section className="relative flex flex-col items-center justify-start px-6 pt-6 pb-0">

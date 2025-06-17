@@ -77,9 +77,9 @@ export default function CreateClub() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16" style={{
-      backgroundImage: "url('/cardbackground.jpg')", // ✅ Replace with your actual path
-      backgroundColor: "#0a3d62" // fallback background color
-    }}>
+    backgroundImage: "url('/backgrounds.jpg')", // ✅ Replace with your actual path
+    backgroundColor: "#0a3d62" ,// fallback background color
+  }} >
       {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
         <div className="px-6 py-4 flex items-center">
@@ -99,14 +99,14 @@ export default function CreateClub() {
 
       <div className="container max-w-md mx-auto px-6 py-8">
         {step === "form" ? (
-          <Card className="bg-gray-800/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl">
+          <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl">
             <CardHeader>
-              <CardTitle className="text-white text-xl">Create a New Club</CardTitle>
-              <CardDescription className="text-white">Enter your club name to get started</CardDescription>
+              <CardTitle className="text-2xl text-green-600 dark:text-green-400">Create a New Club</CardTitle>
+              <CardDescription className="text-gray">Enter your club name to get started</CardDescription>
             </CardHeader>
             <form onSubmit={handleSubmit}>
               <CardContent className="space-y-4">
-                <div className="text-white space-y-2">
+                <div className="text-Black space-y-2">
                   <Label htmlFor="clubName">Club Name</Label>
                   <Input
                     id="clubName"
@@ -122,7 +122,7 @@ export default function CreateClub() {
               <CardFooter>
                 <Button
                   type="submit"
-                  className="w-full bg-[#38ADA9] hover:from-blue-700 hover:to-blue-800 text-gray shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
+                className="w-full bg-[#38ADA9] hover:bg-[#2f9995] text-white shadow-lg hover:shadow-xl hover:shadow-[#38ADA9]/20 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

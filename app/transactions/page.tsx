@@ -7,8 +7,10 @@ import { AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 export default function Transactions() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16" style={{
-      backgroundImage: "url('/backgrounds/app-bg.jpg')",
+      backgroundImage: "url('/cardbackground.jpg')",
       backgroundColor: "#0a3d62",
+       backgroundSize: "cover",
+    backgroundRepeat: "no-repeat"
     }}>
       {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
