@@ -72,13 +72,12 @@ export default function Home() {
 
   return (
   //  <main className="min-h-screen bg-[#0a3d62] dark:bg-[#2E8B87] pt-0 mt-0 pb-16">
-    <main
-  className="min-h-screen pt-0 mt-0 pb-16 bg-cover bg-center bg-no-repeat"
+  <main
+  className="min-h-screen pt-0 mt-0 pb-16 bg-cover bg-center bg-no-repeat lg:pl-64"
   style={{
-    backgroundImage: "url('/cardbackground.jpg')", // ✅ Replace with your actual path
-    backgroundColor: "#0a3d62" ,// fallback background color
+    backgroundImage: "url('/cardbackground.jpg')",
+    backgroundColor: "#0a3d62",
   }}
-
 >
       {/* Header Section */}
       <section className="relative flex flex-col items-center justify-start px-6 pt-6 pb-0">
@@ -90,7 +89,7 @@ export default function Home() {
           </span>
         </button>
 
-        <div className="relative mb-4">
+         {/* <div className="relative mb-4">
           <Avatar className="h-24 w-24 border-4 border-gradient-to-r from-blue-500 to-purple-600 shadow-lg ring-2 ring-white/50 dark:ring-gray-800/50">
             <AvatarImage src="/placeholder.svg?height=96&width=96" alt="Profile" />
             <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white text-2xl font-semibold">
@@ -98,14 +97,14 @@ export default function Home() {
             </AvatarFallback>
           </Avatar>
           <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
-        </div>
+        </div>  */}
+{/* 
+        <h1 className="text-2xl font-bold text-white dark:text-white mb-3">Welcome Jack</h1> */}
 
-        <h1 className="text-2xl font-bold text-white dark:text-white mb-3">Welcome Jack</h1>
-
-       <div className="flex flex-row gap-4 w-full max-w-sm flex-wrap">
+       <div className="flex flex-row gap-4 w-full max-w-sm pt-28"> 
           <Button
-className="flex-1 bg-[#38ADA9] text-white hover:bg-[#ffff] hover:text-black shadow-md shadow-[#38ADA9]/30 hover:shadow-lg hover:shadow-[#2e938f]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0 h-12"
-asChild
+       className="flex-1 bg-[#38ADA9] text-white hover:bg-[#ffff] hover:text-black shadow-md shadow-[#38ADA9]/30 hover:shadow-lg hover:shadow-[#2e938f]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0 h-12"
+           asChild
           >
             <Link href="/create-club">
               <Plus className="h-5 w-5 mr-2" />

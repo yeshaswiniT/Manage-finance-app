@@ -364,7 +364,7 @@ export default function ClubDetails() {
         <Card
   className="relative p-4 pb-4 cursor-pointer transition-all duration-300 hover:brightness-105 backdrop-blur-sm"
   style={{
-    backgroundImage: "radial-gradient(circle at center,#c6c6c6 0%,#38ADA9 100%)",
+    backgroundImage: "radial-gradient(circle at center,#c6c6c6 0%,#FFBF69 100%)",
     backgroundColor: "#38ADA9",
   }}
 >
@@ -405,7 +405,7 @@ export default function ClubDetails() {
         {!hasAdminRights && (
           <div className="flex gap-4">
             <Button
-              className="flex-1 bg-[#fafad2] hover:from-green-700 hover:to-emerald-800 text-black shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
+              className="flex-1 bg-[#38ADA9] hover:bg-[#38ADA9] text-black shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30 transition-all duration-300 transform hover:-translate-y-0.5 h-12"
               onClick={() => router.push(`/club/${clubId}/host-game`)}
             >
               <Plus className="h-5 w-5 mr-2" />
@@ -457,7 +457,7 @@ export default function ClubDetails() {
                       <div className="flex justify-between items-start mb-4">
                         <div>
                           <div className="flex items-center gap-3 mb-2">
-                            <h4 className="font-bold text-lg text-gray-800 dark:text-white">{game.name}</h4>
+                            <h4 className="font-bold text-lg text-green-600 dark:text-green-400">{game.name}</h4>
                             <Badge
                               className={cn(
                                 "font-semibold",
@@ -594,7 +594,7 @@ export default function ClubDetails() {
                               ⏰ Scheduled
                             </Badge>
                           </div>
-                          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gray-600 dark:text-gray-400">
+                          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-gren dark:text-green-400">
                             <div className="flex items-center">
                               <Users className="h-4 w-4 mr-1" />
                               <span>Max {game.maxPlayers} players</span>
@@ -752,7 +752,7 @@ export default function ClubDetails() {
                         </Avatar>
                         <div>
                           <div className="flex items-center space-x-3 mb-1">
-                            <h4 className="font-semibold text-gray-800 dark:text-white">
+                            <h4 className="font-semibold text-gray dark:text-white">
                               {member.name}
                               {member.isCurrentUser && <span className="text-sm text-gray-500 ml-2">(You)</span>}
                             </h4>

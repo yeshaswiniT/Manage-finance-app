@@ -6,14 +6,18 @@ import { AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function Games() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16" style={{
-      backgroundImage: "url('/cardbackground.jpg')",
-      backgroundColor: "#0a3d62",
-       backgroundSize: "cover",
-    backgroundRepeat: "no-repeat"
-    }}>
+  <main
+  className="min-h-screen pt-16 pb-16 bg-cover bg-center bg-no-repeat lg:pl-64 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950"
+  style={{
+    backgroundImage: "url('/cardbackground.jpg')",
+    backgroundColor: "#0a3d62",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+
       {/* Top Navigation Bar */}
-      <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
+      {/* <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
         <div className="px-6 py-4 flex justify-between items-center">
           <div className="relative">
             <Avatar className="h-11 w-11 border-3 border-gradient-to-r from-blue-500 to-purple-600 shadow-lg ring-2 ring-white/50 dark:ring-gray-800/50">
@@ -37,7 +41,7 @@ export default function Games() {
             </span>
           </button>
         </div>
-      </nav>
+      </nav> */}
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-6">

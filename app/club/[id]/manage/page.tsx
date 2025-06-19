@@ -231,7 +231,11 @@ export default function ClubManagement() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16"
+    style={{
+    backgroundImage: "url('/backgrounds.jpg')", // ✅ Replace with your actual path
+    backgroundColor: "#0a3d62" ,// fallback background color
+  }}>
       {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
         <div className="px-6 py-4 flex items-center">
@@ -239,7 +243,7 @@ export default function ClubManagement() {
             variant="ghost"
             size="icon"
             onClick={() => router.back()}
-            className="mr-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="mr-4 bg-[#38ADA9] rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
@@ -252,7 +256,7 @@ export default function ClubManagement() {
                 </span>
               )}
             </h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray dark:text-gray-400">
               {club.name} • #{club.code}
             </p>
           </div>
@@ -290,7 +294,7 @@ export default function ClubManagement() {
             </CardContent>
           </Card>
 
-          <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl">
+          <Card className="bg-white/90 dark:bg-pink-500/90 backdrop-blur-sm border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-3 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl shadow-lg">
@@ -309,20 +313,48 @@ export default function ClubManagement() {
 
         {/* Members Management Tabs */}
         <Tabs defaultValue="members" className="w-full">
-          <TabsList className="grid grid-cols-2 mb-6">
-            <TabsTrigger value="members">Current Members ({members.length})</TabsTrigger>
-            <TabsTrigger value="pending" className="relative">
-              Pending Requests ({pendingMembers.length})
-              {pendingMembers.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
-                  {pendingMembers.length}
-                </span>
-              )}
-            </TabsTrigger>
-          </TabsList>
+  <TabsList className="grid grid-cols-2 mb-6">
+    <TabsTrigger
+    value="members"
+    className="
+      w-full text-white
+      data-[state=active]:bg-[#38ADA9]
+      data-[state=active]:hover:bg-[#2f9995]
+      data-[state=active]:shadow-lg
+      data-[state=active]:hover:shadow-xl
+      data-[state=active]:hover:shadow-[#38ADA9]/20
+      data-[state=inactive]:bg-gray-200
+      data-[state=inactive]:text-black
+      hover:bg-gray-300
+    "
+  >
+      Current Members ({members.length})
+    </TabsTrigger>
+
+    <TabsTrigger
+      value="pending"
+    className=" 
+    w-full text-white
+      data-[state=active]:bg-[#38ADA9]
+      data-[state=active]:hover:bg-[#2f9995]
+      data-[state=active]:shadow-lg
+      data-[state=active]:hover:shadow-xl
+      data-[state=active]:hover:shadow-[#38ADA9]/20
+      data-[state=inactive]:bg-gray-200
+      data-[state=inactive]:text-black
+      hover:bg-gray-300"
+    >
+      Pending Requests ({pendingMembers.length})
+      {pendingMembers.length > 0 && (
+        <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+          {pendingMembers.length}
+        </span>
+      )}
+    </TabsTrigger>
+  </TabsList>
 
           {/* Current Members Tab */}
-          <TabsContent value="members">
+          <TabsContent value="members" >
             <div className="space-y-4">
               {members.map((member) => (
                 <Card
@@ -338,7 +370,7 @@ export default function ClubManagement() {
                         </Avatar>
                         <div>
                           <div className="flex items-center space-x-3 mb-1">
-                            <h4 className="font-semibold text-gray-800 dark:text-white">
+                            <h4 className="font-semibold text-green-600 dark:text-green-400">
                               {member.name}
                               {member.isCurrentUser && <span className="text-sm text-gray-500 ml-2">(You)</span>}
                             </h4>
@@ -443,7 +475,7 @@ export default function ClubManagement() {
                             <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
                           </Avatar>
                           <div>
-                            <h4 className="font-semibold text-gray-800 dark:text-white mb-1">{member.name}</h4>
+                            <h4 className="font-semibold text-green-600 dark:text-green-400 mb-1">{member.name}</h4>
                             <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400">
                               <span>Requested: {new Date(member.requestedAt).toLocaleDateString()}</span>
                               <span>Used code: {member.code}</span>

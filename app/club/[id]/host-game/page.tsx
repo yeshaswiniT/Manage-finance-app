@@ -34,7 +34,11 @@ export default function HostGame() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-indigo-950 pb-16"
+     style={{
+    backgroundImage: "url('/backgrounds.jpg')", // ✅ Replace with your actual path
+    backgroundColor: "#0a3d62" ,// fallback background color
+  }}>
       {/* Top Navigation Bar */}
       <nav className="sticky top-0 z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-lg shadow-black/5">
         <div className="px-6 py-4 flex items-center">
@@ -44,29 +48,29 @@ export default function HostGame() {
             onClick={() => router.back()}
             className="mr-4 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className=" mr-4 bg-[#38ADA9] rounded-full hover:bg-green-100 dark:hover:bg-gray-800" />
           </Button>
-          <h1 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-            Host New Game
-          </h1>
+          <h1 className="text-xl font-bold text-black">
+              Host New Game
+                  </h1>
         </div>
       </nav>
 
       <div className="container max-w-2xl mx-auto px-6 py-8">
         <Card className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-0 shadow-xl">
           <CardHeader>
-            <CardTitle className="text-2xl">Create a New Game</CardTitle>
+            <CardTitle className="text-2xl text-green-600">Create a New Game</CardTitle>
           </CardHeader>
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-6">
-              <div className="space-y-2">
+              <div className="space-y-2 ">
                 <Label htmlFor="gameName">Game Name</Label>
                 <Input
                   id="gameName"
                   placeholder="e.g., Friday Night Tournament"
                   value={gameData.name}
                   onChange={(e) => setGameData({ ...gameData, name: e.target.value })}
-                  className="bg-white/50 dark:bg-gray-900/50"
+                  className="bg-white/50 dark:bg-gray-900/50  border-[#38ADA9] focus:ring-[#38ADA9]"
                   required
                 />
               </div>
@@ -74,7 +78,7 @@ export default function HostGame() {
               <div className="space-y-2">
                 <Label htmlFor="gameType">Game Type</Label>
                 <Select value={gameData.type} onValueChange={(value) => setGameData({ ...gameData, type: value })}>
-                  <SelectTrigger className="bg-white/50 dark:bg-gray-900/50">
+                  <SelectTrigger className="bg-white/50 dark:bg-gray-900/50 border-[#38ADA9] focus:ring-[#38ADA9] ">
                     <SelectValue placeholder="Select game type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -96,7 +100,7 @@ export default function HostGame() {
                       placeholder="8"
                       value={gameData.maxPlayers}
                       onChange={(e) => setGameData({ ...gameData, maxPlayers: e.target.value })}
-                      className="pl-10 bg-white/50 dark:bg-gray-900/50"
+                      className="pl-10 bg-white/50 dark:bg-gray-900/50 border-[#38ADA9] focus:ring-[#38ADA9]"
                       min="2"
                       max="20"
                       required
@@ -114,7 +118,7 @@ export default function HostGame() {
                       placeholder="50"
                       value={gameData.buyIn}
                       onChange={(e) => setGameData({ ...gameData, buyIn: e.target.value })}
-                      className="pl-10 bg-white/50 dark:bg-gray-900/50"
+                      className="pl-10 bg-white/50 dark:bg-gray-900/50 border-[#38ADA9] focus:ring-[#38ADA9]"
                       min="1"
                       required
                     />
@@ -131,7 +135,7 @@ export default function HostGame() {
                     type="datetime-local"
                     value={gameData.scheduledTime}
                     onChange={(e) => setGameData({ ...gameData, scheduledTime: e.target.value })}
-                    className="pl-10 bg-white/50 dark:bg-gray-900/50"
+                    className="pl-10 bg-gray/50 dark:bg-gray-900/50 border-[#38ADA9] focus:ring-[#38ADA9]"
                   />
                 </div>
                 <p className="text-xs text-gray-500 dark:text-gray-400">Leave empty to start the game immediately</p>
@@ -144,7 +148,7 @@ export default function HostGame() {
                   placeholder="Add any special rules or notes about this game..."
                   value={gameData.description}
                   onChange={(e) => setGameData({ ...gameData, description: e.target.value })}
-                  className="bg-white/50 dark:bg-gray-900/50"
+                  className="bg-white/50 dark:bg-gray-900/50 border-[#38ADA9] focus:ring-[#38ADA9]"
                   rows={3}
                 />
               </div>
